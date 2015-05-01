@@ -1,0 +1,15 @@
+nginx:
+  build: ./nginx
+  ports:
+   - "9000:80"
+  links:
+   - webserver1
+   - webserver2
+webserver1:
+  build: ./webserver1
+  ports:
+    - "80"
+webserver2:
+  build: ./webserver2
+  ports:
+    - "80"
